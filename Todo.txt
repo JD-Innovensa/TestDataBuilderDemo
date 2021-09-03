@@ -1,0 +1,55 @@
+Decide scenario
+
+
+
+A has B has C
+
+Person
+has Journey
+
+
+Explorer
+has Excursion(European City Tour, City)
+	has VisitsPlace (Paris)
+		has PointOfInterest (Eiffel Tower)
+		has PointOfInterest (Louvre)
+	has VisitPlace (Berlin)
+		has PointOfInterest (Riechstag)
+	has Diary
+	has Diary
+has Excursion(US Tour, General)
+
+
+
+Explorers
+	id, fistname, lastname
+Excursions
+	id, explorerid, name, start, end
+Visit
+	id, excursionid,placeid
+Places (type city)
+	id, name, type
+PointOfInterests (place)
+	id, name,  placeid
+PlaceType
+	id, name
+		: city, beach
+
+Explorer
+	Excursions
+		Visit
+			PointOfInterest
+
+
+Create domain model
+
+
+// with 100 products there are 100 SQL queries,
+ // so we have a total of 101 SQL queries
+ foreach (var product in products)
+ {
+ var price = dbContext.Prices
+ .FirstOrDefault(p => p.ProductId == product.Id)
+ } 
+
+
